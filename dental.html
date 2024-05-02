@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Services | Nyamirama Health Center</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #3498db;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .go-back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      z-index: 2;
+    }
+
+    .go-back-button:hover {
+      transform: rotate(360deg);
+    }
+
+    main {
+      padding-top: 80px; /* Adjust for the fixed header */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    section {
+      width: 45%;
+      margin-bottom: 40px;
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.5s;
+    }
+
+    section:hover {
+      transform: scale(1.05);
+    }
+
+    .dental-service h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .dental-service p {
+      line-height: 1.6;
+    }
+
+    .dental-service img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Parallax scrolling */
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 15px;
+      }
+      .go-back-button {
+        top: 15px;
+        left: 15px;
+        padding: 10px 15px;
+      }
+      section {
+        width: 90%;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(-10px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dental Services</h1>
+    <a href="index.html" class="go-back-button">↩</a>
+  </header>
+
+  <main>
+    <section class="dental-service braces parallax" style="background-image: url('');" data-speed="3">
+      <div class="dental-content">
+        <h2>Braces</h2>
+        <img src="dentbrac2.jfif" alt="Braces">
+        <p>Braces are used to correct crooked or misaligned teeth and improve dental health. They are made of metal, ceramic, or clear materials and gradually shift teeth into proper alignment over time.</p>
+      </div>
+    </section>
+
+    <section class="dental-service dental-cleaning-adults parallax" style="background-image: url('');" data-speed="2">
+      <div class="dental-content">
+        <h2>Dental Cleaning for Adults</h2>
+        <img src="dentcare.jfif" alt="Dental Cleaning for Adults">
+        <p>Dental cleaning for adults involves removing plaque and tartar buildup through scaling and polishing procedures. It helps prevent tooth decay, gum disease, and bad breath, promoting overall oral health.</p>
+      </div>
+    </section>
+
+    <section class="dental-service dental-cleaning-children parallax" style="background-image: url('dentchild.jfif');" data-speed="1">
+      <div class="dental-content">
+        <h2>Dental Cleaning for Children</h2>
+        <img src="dentchild.jfif" alt="Dental Cleaning for Children">
+        <p>Dental cleaning for children is essential for maintaining healthy teeth and gums from an early age. It involves gentle cleaning, fluoride treatment, and dental sealants to prevent cavities and promote proper oral development.</p>
+      </div>
+    </section>
+
+    <section class="dental-service dental-implant parallax" style="background-image: url('dentimp.jfif');" data-speed="3">
+      <div class="dental-content">
+        <h2>Dental Implants</h2>
+        <img src="dentimp.jfif" alt="Dental Implants">
+        <p>Dental implants are titanium posts surgically placed into the jawbone to replace missing teeth. They provide a strong foundation for artificial teeth, restoring functionality, aesthetics, and confidence in your smile.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Parallax scrolling effect
+    window.addEventListener('scroll', function() {
+      var scrolled = window.scrollY;
+      var parallax = document.querySelectorAll('.parallax');
+
+      parallax.forEach(function(element) {
+        var speed = element.dataset.speed;
+        element.style.backgroundPositionY = -(scrolled * speed) + 'px';
+      });
+    });
+
+    // Fade in animation
+    document.addEventListener('DOMContentLoaded', function() {
+      var dentalContent = document.querySelectorAll('.dental-content');
+      dentalContent.forEach(function(element) {
+        element.style.opacity = 0;
+        element.style.animation = 'fadeIn 1s ease-in-out forwards';
+      });
+    });
+
+    // Shake animation for go-back-button
+    var goBackButton = document.querySelector('.go-back-button');
+    goBackButton.addEventListener('mouseenter', function() {
+      this.style.animation = 'shake 0.5s ease infinite';
+    });
+    goBackButton.addEventListener('mouseleave', function() {
+      this.style.animation = 'none';
+    });
+  </script>
+
+</body>
+</html>

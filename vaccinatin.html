@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccination | Nyamirama Health Center</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #3498db;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .go-back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      z-index: 2;
+    }
+
+    .go-back-button:hover {
+      transform: rotate(360deg);
+    }
+
+    main {
+      padding-top: 80px; /* Adjust for the fixed header */
+      text-align: center;
+    }
+
+    .vaccine-info {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .vaccine-info img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .vaccine-info h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .vaccine-info p {
+      line-height: 1.6;
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 15px;
+      }
+      .go-back-button {
+        top: 15px;
+        left: 15px;
+        padding: 10px 15px;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInUp {
+      0% {
+        transform: translateY(100px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vaccination</h1>
+    <a href="index.html" class="go-back-button">↩</a>
+  </header>
+
+  <main>
+    <div class="vaccine-info">
+      <img src="vc.jfif" alt="Vaccine">
+      <h2>Vaccines for Children and Adults</h2>
+      <p>Vaccines are important for both children and adults to protect against various infectious diseases. They work by stimulating the immune system to produce antibodies, providing immunity against specific pathogens.</p>
+      <p>For children, vaccines are administered according to a schedule recommended by health authorities. These vaccines protect against diseases such as measles, mumps, rubella, polio, and more.</p>
+      <p>For adults, vaccines are recommended based on age, health conditions, occupation, travel destinations, and other factors. Common vaccines for adults include those for influenza, tetanus, hepatitis, and pneumonia.</p>
+    </div>
+  </main>
+
+  <script>
+    // Fade in animation
+    document.addEventListener('DOMContentLoaded', function() {
+      var vaccineInfo = document.querySelector('.vaccine-info');
+      vaccineInfo.style.opacity = 0;
+      vaccineInfo.style.animation = 'fadeIn 1s ease-in-out forwards';
+    });
+  </script>
+
+</body>
+</html>

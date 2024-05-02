@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIV Testing | Nyamirama Health Center</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #3498db;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .go-back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      z-index: 2;
+    }
+
+    .go-back-button:hover {
+      transform: rotate(360deg);
+    }
+
+    main {
+      padding-top: 80px; /* Adjust for the fixed header */
+      text-align: center;
+    }
+
+    .hiv-info {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .hiv-info img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .hiv-info h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .hiv-info p {
+      line-height: 1.6;
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 15px;
+      }
+      .go-back-button {
+        top: 15px;
+        left: 15px;
+        padding: 10px 15px;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HIV Testing</h1>
+    <a href="index.html" class="go-back-button">↩</a>
+  </header>
+
+  <main>
+    <div class="hiv-info">
+      <img src="hivtesting.jfif" alt="HIV Testing">
+      <h2>Understanding HIV Testing</h2>
+      <p>HIV testing is crucial for early detection and treatment of HIV infection. At Nyamirama Health Center, we offer confidential and supportive HIV testing services to our community.</p>
+      <h3>Why HIV Testing is Important</h3>
+      <p>Testing for HIV is important for several reasons:</p>
+      <ul>
+        <li>Early detection allows for timely medical intervention and treatment.</li>
+        <li>Knowing your HIV status helps in preventing the transmission of the virus to others.</li>
+        <li>Accessing support services and resources for HIV-positive individuals.</li>
+      </ul>
+      <h3>Types of HIV Tests</h3>
+      <p>There are different types of HIV tests available:</p>
+      <ul>
+        <li>Antibody tests</li>
+        <li>Antigen/antibody tests</li>
+        <li>Nucleic acid tests (NATs)</li>
+      </ul>
+      <h3>The Testing Process</h3>
+      <p>The HIV testing process typically involves:</p>
+      <ol>
+        <li>Pre-test counseling</li>
+        <li>Sample collection (blood, oral fluid, or urine)</li>
+        <li>Laboratory testing</li>
+        <li>Post-test counseling</li>
+      </ol>
+      <h3>Support Services</h3>
+      <p>We provide comprehensive support services for individuals undergoing HIV testing, including counseling, linkage to care, and access to treatment and support groups.</p>
+    </div>
+  </main>
+
+  <script>
+    // Fade in animation
+    document.addEventListener('DOMContentLoaded', function() {
+      var hivInfo = document.querySelector('.hiv-info');
+      hivInfo.style.opacity = 0;
+      hivInfo.style.animation = 'fadeIn 1s ease-in-out forwards';
+    });
+  </script>
+
+</body>
+</html>

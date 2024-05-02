@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maternity Care | Nyamirama Health Center</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #3498db;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .go-back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      z-index: 2;
+    }
+
+    .go-back-button:hover {
+      transform: rotate(360deg);
+    }
+
+    main {
+      padding-top: 80px; /* Adjust for the fixed header */
+      text-align: center;
+    }
+
+    .maternity-info {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .maternity-info img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .maternity-info h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .maternity-info p {
+      line-height: 1.6;
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 15px;
+      }
+      .go-back-button {
+        top: 15px;
+        left: 15px;
+        padding: 10px 15px;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Maternity Care</h1>
+    <a href="index.html" class="go-back-button">↩</a>
+  </header>
+
+  <main>
+    <div class="maternity-info">
+      <img src="maternity.jfif" alt="Maternity Care">
+      <h2>Comprehensive Maternity Care</h2>
+      <p>At Nyamirama Health Center, we provide comprehensive maternity care services to support women throughout their pregnancy, childbirth, and postpartum period. Our dedicated team of healthcare professionals ensures the safety and well-being of both mother and baby.</p>
+      <h3>Prenatal Care</h3>
+      <p>Prenatal care is essential for monitoring the health of both mother and baby during pregnancy. Our prenatal care services include regular check-ups, screenings, and tests to detect any potential complications and ensure a healthy pregnancy.</p>
+      <h3>Childbirth</h3>
+      <p>We offer a supportive and comfortable environment for childbirth, whether it's a natural delivery or a cesarean section. Our experienced midwives and obstetricians provide expert care and guidance throughout the labor and delivery process.</p>
+      <h3>Postpartum Care</h3>
+      <p>After childbirth, we provide comprehensive postpartum care to help mothers recover and adjust to their new role. Our postpartum services include monitoring maternal and infant health, breastfeeding support, and counseling on newborn care.</p>
+      <h3>Newborn Care</h3>
+      <p>We provide specialized care for newborns to ensure their health and well-being during the critical early days of life. Our newborn care services include vaccinations, screenings, feeding support, and guidance on infant care and development.</p>
+    </div>
+  </main>
+
+  <script>
+    // Fade in animation
+    document.addEventListener('DOMContentLoaded', function() {
+      var maternityInfo = document.querySelector('.maternity-info');
+      maternityInfo.style.opacity = 0;
+      maternityInfo.style.animation = 'fadeIn 1s ease-in-out forwards';
+    });
+  </script>
+
+</body>
+</html>

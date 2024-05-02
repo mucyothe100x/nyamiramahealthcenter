@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment | Nyamirama Health Center</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .go-back-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 8px 16px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    .go-back-button:hover {
+      transform: rotate(360deg);
+    }
+
+    main {
+      padding-top: 60px; /* Adjust for the fixed header */
+      text-align: center;
+    }
+
+    .appointment-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .appointment-form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .appointment-form select,
+    .appointment-form input[type="text"],
+    .appointment-form input[type="date"],
+    .appointment-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .appointment-form button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .appointment-form button:hover {
+      background-color: #2980b9;
+    }
+
+    .appointment-info {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 8px 16px;
+      }
+      .go-back-button {
+        top: 8px;
+        left: 8px;
+        padding: 8px 12px;
+      }
+      main {
+        padding-top: 50px;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Book an Appointment</h1>
+    <a href="index.html" class="go-back-button">↩ Go back</a>
+  </header>
+
+  <main>
+    <div class="appointment-form">
+      <h2>Choose a Service</h2>
+      <label for="service">Select Service:</label>
+      <select id="service">
+        <option value="dental">Dental Services</option>
+        <option value="vaccination">Vaccination</option>
+        <option value="maternity">Maternity</option>
+        <option value="hiv">HIV Testing</option>
+      </select>
+    </div>
+
+    <!-- Dental Services Form -->
+    <div class="appointment-form" id="dental-form" style="display: none;">
+      <h2>Dental Services Appointment</h2>
+      <label for="dental-name">Name:</label>
+      <input type="text" id="dental-name" placeholder="Enter your name" required>
+
+      <label for="dental-date">Date:</label>
+      <input type="date" id="dental-date" min="<?php echo date('Y-m-d'); ?>" required>
+
+      <label for="dental-service">Service Type:</label>
+      <select id="dental-service" required>
+        <option value="routine-checkup">Routine Checkup</option>
+        <option value="cleaning">Cleaning</option>
+        <option value="braces">Braces Consultation</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="dental-message">Additional Message:</label>
+      <textarea id="dental-message" rows="4" placeholder="Enter any additional information"></textarea>
+
+      <button class="submit-btn">Submit Appointment</button>
+      <div class="appointment-info" id="dental-appointment-info" style="display: none;"></div>
+    </div>
+
+    <!-- Vaccination Form -->
+    <div class="appointment-form" id="vaccination-form" style="display: none;">
+      <h2>Vaccination Appointment</h2>
+      <label for="vaccination-name">Name:</label>
+      <input type="text" id="vaccination-name" placeholder="Enter your name" required>
+
+      <label for="vaccination-date">Date:</label>
+      <input type="date" id="vaccination-date" min="<?php echo date('Y-m-d'); ?>" required>
+
+      <label for="vaccination-type">Vaccine Type:</label>
+      <select id="vaccination-type" required>
+        <option value="covid-19">COVID-19 Vaccine</option>
+        <option value="flu">Flu Vaccine</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="vaccination-message">Additional Message:</label>
+      <textarea id="vaccination-message" rows="4" placeholder="Enter any additional information"></textarea>
+
+      <button class="submit-btn">Submit Appointment</button>
+      <div class="appointment-info" id="vaccination-appointment-info" style="display: none;"></div>
+    </div>
+
+    <!-- Maternity Form -->
+    <div class="appointment-form" id="maternity-form" style="display: none;">
+      <h2>Maternity Appointment</h2>
+      <label for="maternity-name">Name:</label>
+      <input type="text" id="maternity-name" placeholder="Enter your name" required>
+
+      <label for="maternity-date">Date:</label>
+      <input type="date" id="maternity-date" min="<?php echo date('Y-m-d'); ?>" required>
+
+      <label for="maternity-message">Additional Message:</label>
+      <textarea id="maternity-message" rows="4" placeholder="Enter any additional information"></textarea>
+
+      <button class="submit-btn">Submit Appointment</button>
+      <div class="appointment-info" id="maternity-appointment-info" style="display: none;"></div>
+    </div>
+
+    <!-- HIV Testing Form -->
+    <div class="appointment-form" id="hiv-form" style="display: none;">
+      <h2>HIV Testing Appointment</h2>
+      <label for="hiv-name">Name:</label>
+      <input type="text" id="hiv-name" placeholder="Enter your name" required>
+
+      <label for="hiv-date">Date:</label>
+      <input type="date" id="hiv-date" min="<?php echo date('Y-m-d'); ?>" required>
+
+      <label for="hiv-reason">Reason for Testing:</label>
+      <textarea id="hiv-reason" rows="4" placeholder="Enter the reason for testing" required></textarea>
+
+      <button class="submit-btn">Submit Appointment</button>
+      <div class="appointment-info" id="hiv-appointment-info" style="display: none;"></div>
+    </div>
+  </main>
+
+  <script>
+    // Fade in animation
+    document.addEventListener('DOMContentLoaded', function() {
+      var appointmentForms = document.querySelectorAll('.appointment-form');
+      for (var i = 0; i < appointmentForms.length; i++) {
+        appointmentForms[i].style.opacity = 0;
+        appointmentForms[i].style.animation = 'fadeIn 1s ease-in-out forwards';
+      }
+    });
+
+    // Show appointment form based on selected service
+    document.getElementById('service').addEventListener('change', function() {
+      var service = this.value;
+      var appointmentForms = document.querySelectorAll('.appointment-form');
+      for (var i = 0; i < appointmentForms.length; i++) {
+        appointmentForms[i].style.display = 'none';
+      }
+      document.getElementById(service + '-form').style.display = 'block';
+    });
+
+    // Submit appointment
+    var submitButtons = document.querySelectorAll('.submit-btn');
+    for (var i = 0; i < submitButtons.length; i++) {
+      submitButtons[i].addEventListener('click', function() {
+        var serviceName = this.parentElement.id.split('-')[0];
+        var name = document.getElementById(serviceName + '-name').value;
+        var date = document.getElementById(serviceName + '-date').value;
+        var message = document.getElementById(serviceName + '-message').value;
+        var type = serviceName === 'vaccination' ? document.getElementById(serviceName + '-type').value : '';
+        var reason = serviceName === 'hiv' ? document.getElementById(serviceName + '-reason').value : '';
+
+        // Check if the date is valid
+        var selectedDate = new Date(date);
+        var today = new Date();
+        if (selectedDate < today) {
+          alert('Please select a future date for the appointment.');
+          return;
+        }
+
+        // Display appointment info
+        var appointmentInfo = document.getElementById(serviceName + '-appointment-info');
+        appointmentInfo.innerHTML = '<h3>Your Appointment</h3>' +
+          '<p><strong>Service:</strong> ' + serviceName + '</p>' +
+          '<p><strong>Name:</strong> ' + name + '</p>' +
+          '<p><strong>Date:</strong> ' + date + '</p>' +
+          (type ? '<p><strong>Vaccine Type:</strong> ' + type + '</p>' : '') +
+          (reason ? '<p><strong>Reason for Testing:</strong> ' + reason + '</p>' : '') +
+          (message ? '<p><strong>Additional Message:</strong> ' + message + '</p>' : '');
+        appointmentInfo.style.display = 'block';
+      });
+    }
+  </script>
+  </body>
+  </html>
